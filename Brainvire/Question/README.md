@@ -12,7 +12,7 @@
 		2. Email -> text -> If customer is loggedIn this field should be auto fill.
 		3. Question -> textarea
 
-	**Client side validation and server side validation must be there.**
+**Client side validation and server side validation must be there.**
 	
 	User posted Question visible on the admin area and admin will decide weather this question should be visible on the tab of the frontend or not. Admin can provide the answer of the asked question.
 	Question status are -> Pending, Rejected, Approved.
