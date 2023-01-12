@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+<template id="question1" label="question1" file="question1.html" type="html" module="Brainvire_Question" area="frontend"/>
+<template id="question2" label="question2" file="question2.html" type="html" module="Brainvire_Question" area="frontend"/>
+<template id="question3" label="question3" file="question3.html" type="html" module="Brainvire_Question" area="frontend"/>
+</config>

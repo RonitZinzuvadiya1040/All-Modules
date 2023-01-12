@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Brainvire_Question::faq" title="faq" sortOrder="10">
+					<resource id="Brainvire_Question::faq_save" title="Save faq" sortOrder="10"/>
+					<resource id="Brainvire_Question::faq_delete" title="Delete faq" sortOrder="20"/>
+					<resource id="Brainvire_Question::faq_update" title="Update faq" sortOrder="30"/>
+					<resource id="Brainvire_Question::faq_view" title="View faq" sortOrder="40"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

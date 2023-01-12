@@ -1,0 +1,16 @@
+{
+    "question_answer": {
+        "column": {
+            "id": true,
+            "name": true,
+            "email": true,
+            "question": true,
+            "answer": true,
+            "status": true,
+            "sku": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

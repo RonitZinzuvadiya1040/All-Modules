@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="question_answer" resource="default" engine="innodb" comment="QA Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="name"/>
+        <column xsi:type="varchar" name="email" nullable="false" length="255" comment="email"/>
+        <column xsi:type="varchar" name="question" nullable="false" length="255" comment="quetion"/>
+        <column xsi:type="varchar" name="answer" nullable="false" length="255" comment="answer"/>
+         <column xsi:type="varchar" name="sku" nullable="false" length="255" comment="sku"/>
+        <column xsi:type="boolean" name="status" nullable="false" comment="status"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

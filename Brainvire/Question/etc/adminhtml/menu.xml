@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+   <menu>
+      <add id="Brainvire::top_level" title="Brainvire" module="Brainvire_Question" sortOrder="50" resource="Magento_Backend::content" />
+      <add id="Brainvire_Question::brainvire_question_faq" title="Customer Questions" module="Brainvire_Question" sortOrder="10" resource="Magento_Backend::content" parent="Brainvire::top_level" action="brainvire_question/faq/index" />
+   </menu>
+</config>

@@ -1,0 +1,21 @@
+{
+    "brainvire_question_faq": {
+        "column": {
+            "faq_id": true,
+            "product_id": true,
+            "product_name": true,
+            "name": true,
+            "email": true,
+            "question": true,
+            "answer": true,
+            "status": true
+        },
+        "index": {
+            "BRAINVIRE_QUESTION_FAQ_PRD_NAME_NAME_EMAIL_QUESTION_ANSWER_STS": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "BRAINVIRE_QUESTION_FAQ_PRD_ID_CAT_CTGR_PRD_PRD_ID": true
+        }
+    }
+}

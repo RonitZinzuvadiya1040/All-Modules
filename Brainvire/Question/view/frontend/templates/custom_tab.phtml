@@ -1,0 +1,152 @@
+<?php
+if($this->getCurrentProduct()->getTest()):
+
+$collections = $block->getTests();
+$currentProduct = $block->getCurrentProduct();
+$prod = $currentProduct->getId();
+$customerId = $block->getCustomerId();
+$customerName = $block->getCustomerName();
+$customerEmail = $block->getCustomerEmail();
+
+// echo "<pre>";
+// print_r(get_class_methods($collections));
+// die();
+
+$i=1;
+
+echo '<strong> <h2>Customer Question/Answers</h2> </strong>';
+
+foreach ($collections as $collection):
+
+    // if($collection->getProductId() == $prod):
+        echo '<br/> Question: ';
+        echo $i++ . ". ";
+        echo $collection->getQuestion(); 
+        echo '<br/> Answer: ';
+        echo $collection->getAnswer();
+        echo '<br/> ';
+        echo '_____________________________________________________________________________________________________________________________________________________';
+        echo '<br/> ';
+    // endif;
+endforeach;
+?>
+
+
+	<style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        h2{
+            color: black;
+        }
+        
+        h2:hover {
+            color: red;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        input[type=tel] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 0 0;
+            display: inline-block;
+            border: none;
+            background: lightgrey;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 0 0;
+            display: inline-block;
+            border: none;
+            background: lightgrey;
+        }
+
+
+        input[type=text]:focus,
+        input[type=email]:focus,
+        input[type=password]:focus,
+        input[type=tel]:focus,
+        input[type=submit]:focus {
+            background-color: darkgray;
+            outline: none;
+        }
+        .div-class {
+            width: 50%;
+            padding: 15px;
+            margin: auto;
+        }
+    </style>
+
+ <!--    <script>
+        function c_validation() {
+            var name =
+                document.forms.RegForm.name.value;
+            var email =
+                document.forms.RegForm.email.value;
+            var question =
+                document.forms.RegForm.question.value;
+
+            var regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; //Javascript reGex for Email Validation.
+            var regQuestion = /^[7-9]\d{9}$/; // Javascript reGex for Phone Number validation.
+            var regName = /\d+$/g; // Javascript reGex for Name validation
+            var regPassword = password;
+
+            //name
+            if (name == "" || regName.test(name)) {
+                window.alert("Please enter your Name Properly.");
+                // name.focus();
+                return false;
+            }
+            //email
+            if (email == "" || !regEmail.test(email)) {
+                window.alert("Please enter a valid E-mail address..");
+                // email.focus();
+                return false;
+            }
+            //mobile number
+            if (question == "" || !regQuestion.test(question)) {
+                window.alert("Type your Quetions here..");
+                // mobile.focus();
+                return false;
+            }
+            return true;
+        }
+    </script> -->
+
+
+    <form name="RegForm" method="post" id="RegForm" form class="RegForm" data-mage-init='{"validation":{}}' action=<?php echo $block->getUrl('customerfaq/index/save'); ?>>
+        <div class="div-class">
+
+            <h2 style="text-align:center; color: black;">Write Down Your Query Here !!</h2>
+<!-- for getting product id -->
+            <input type="hidden" name="product_id" id="product_id" value="<?php echo $currentProduct->getId(); ?>" placeholder="Product Id">
+<!-- for getting product name -->
+            <input type="hidden" name="product_name" id="product_name" value="<?php echo $currentProduct->getName(); ?>" placeholder="Product Name">
+
+            <input type="hidden" name="cust_id" id="cust_id" value="<?php echo $customerId;?>">
+            
+            <label for="name"><b>Name <s style="color: red">*</s></b></label>
+            <input type="text" placeholder="Please Enter Name" name="name" data-validate='{"required":true}' id="name" value="<?php echo $customerName; ?>">
+
+            <br></br><label for="email"><b>Email <s style="color: red">*</s></b></label>
+            <input type="email" placeholder="Please Enter Email" name="email" data-validate='{"required":true}' value="<?php echo $customerEmail; ?>">
+
+            <br></br><label for="question"><b>Question <s style="color: red">*</s></b></label>
+            <textarea placeholder="What you Wanna Know Just Ask" rows="3" cols="4" style="background-color:lightgrey;" name="question" data-validate="{required:true}"></textarea>
+            <!-- <input type="text" placeholder="What you Wanna Know Just Ask" name="question" data-validate='{"required":true}'> -->
+
+            <br></br><input type="submit" value="Submit" name="submit"/>
+        </div>
+    </form>
+<?php endif; ?>
+
+      

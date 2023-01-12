@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Brainvire\Question\Api\FaqRepositoryInterface" type="Brainvire\Question\Model\FaqRepository"/>
+    <preference for="Brainvire\Question\Api\Data\FaqInterface" type="Brainvire\Question\Model\Faq"/>
+    <preference for="Brainvire\Question\Api\Data\FaqSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <virtualType name="Brainvire\Question\Model\ResourceModel\Faq\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">brainvire_question_faq</argument>
+            <argument name="resourceModel" xsi:type="string">Brainvire\Question\Model\ResourceModel\Faq\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="brainvire_question_faq_listing_data_source" xsi:type="string">Brainvire\Question\Model\ResourceModel\Faq\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
+
+<!-- <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="customerfaq_post_listing_data_source" xsi:type="string">Brainvire\Question\Model\ResourceModel\Test\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Brainvire\Question\Model\ResourceModel\Test\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">question_answer</argument>
+            <argument name="resourceModel" xsi:type="string">Brainvire\Question\Model\ResourceModel\Test</argument>
+        </arguments>
+    </virtualType>
+</config>
+     -->
