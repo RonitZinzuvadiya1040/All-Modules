@@ -1,0 +1,145 @@
+<?php
+/* @var \Starlabs\HelloWorld\Block\Hello $block */
+
+?>
+
+<html>
+<head>
+	<style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        input[type=text],
+        input[type=password],
+        input[type=tel] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 0 0;
+            display: inline-block;
+            border: none;
+            background: lightgrey;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 0 0;
+            display: inline-block;
+            border: none;
+            background: lightgrey;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus,
+        input[type=tel]:focus,
+        input[type=submit]:focus {
+            background-color: darkgray;
+            outline: none;
+        }
+        .div-class {
+            width: 50%;
+            padding: 15px;
+            margin: auto;
+        }
+    </style>
+    
+    <script>
+        function c_validation() {
+            var name =
+                document.forms.RegForm.name.value;
+            var email =
+                document.forms.RegForm.email.value;
+            var phone =
+                document.forms.RegForm.phone.value;
+            var password =
+                document.forms.RegForm.password.value;
+            var c_pass =
+                document.forms.RegForm.confirm_password.value;
+
+            var regEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; //Javascript reGex for Email Validation.
+            var regPhone = /^[7-9]\d{9}$/; // Javascript reGex for Phone Number validation.
+            var regName = /\d+$/g; // Javascript reGex for Name validation
+            var regPassword = password;
+
+            //name
+            if (name == "" || regName.test(name)) {
+                window.alert("Please enter your name properly.");
+                // name.focus();
+                return false;
+            }
+            //email
+            if (email == "" || !regEmail.test(email)) {
+                window.alert("Please enter a valid e-mail address.");
+                // email.focus();
+                return false;
+            }
+            //mobile number
+            if (phone == "" || !regPhone.test(phone)) {
+                window.alert("Please enter your mobile number.");
+                // mobile.focus();
+                return false;
+            }
+            //password
+            if (password == "") {
+                window.alert("Please enter your password");
+                // pass.focus();
+                return false;
+            }
+
+            if (password.length < 6) {
+                window.alert("Password should be at least 6 character long");
+                // password.focus();
+                return false;
+            }
+            //confirm password
+            if (c_pass != regPassword) {
+                alert("Password is not same");
+                // password.focus();
+                return false;
+            } else {
+                window.alert("Password is matched");
+                password.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+    <form name="RegForm" method="post" id="RegForm" form class="RegForm" action=<?php echo $block->getUrl('helloworld/index/save'); ?>>
+
+		<h1 style="text-align: center;"><?= $block->getText() ?></h1>
+        <div class="div-class">
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name">
+
+            <br></br><label for="gender"><b>Enter your Gender</b><br></label>
+                <input type="radio" id="male" name="gender" value="male" for="male" checked>Male<br>
+                <input type="radio" id="female" name="gender" value="female" for="female">Female<br>
+                <input type="radio" id="Other" name="gender" value="other" for="other">Other
+                
+            <br></br><label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email">
+
+            <br></br><label for="mobile"><b>Mobile Number</b></label>
+            <input type="text" placeholder="Enter Mobile Number" name="phone">
+            
+            <br></br><label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password">
+
+            <br></br><label for="confirm_password"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm Password" name="confirm_password">
+
+            <br></br><input type="submit" value="Sign UP" name="submit" onclick="return c_validation()"/>
+        </div>
+    </form>
+</body>
+
+</html>

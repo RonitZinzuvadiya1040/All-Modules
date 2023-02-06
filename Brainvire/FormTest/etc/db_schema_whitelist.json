@@ -1,0 +1,15 @@
+{
+    "form": {
+        "column": {
+            "id": true,
+            "name": true,
+            "gender": true,
+            "email": true,
+            "phone": true,
+            "password": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
