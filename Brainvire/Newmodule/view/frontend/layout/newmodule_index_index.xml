@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="Brainvire_Newmodule::web/js/slick.js" async="async" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Brainvire\Newmodule\Block\ProductSlider" name="brainvire_newmodule" template="productslider.phtml"></block>
+        </referenceContainer>
+    </body>
+</page>

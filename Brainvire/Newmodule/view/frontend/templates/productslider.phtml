@@ -1,0 +1,34 @@
+<?php 	$productColl = $block->getProductCollection();	?>
+
+<section class="regular slider">
+<div id="display_slider">
+<?php foreach($productColl as $prd) { ?>
+	<!-- for style use this <div style="float:left; overflow: hidden;"> -->
+		<div>
+		<img src="<?php echo $block->getProductImageUrl($prd->getId()); ?>" style="width:150px !important; height: 150px !important;" />
+		<span><?php echo $prd->getName(); ?></span>
+	</div>
+<?php } ?>
+</div>
+  </section>
+
+  <script type="text/javascript">
+    require([
+        'jquery',
+        'Brainvire_Newmodule/js/slider'
+    ], function ($, slider) {
+    	
+       
+    });
+   
+</script>
+
+
+
+<!-- 	
+<script>
+
+require(['jquery', 'slider'], function($) {
+        
+    });
+</script> -->
