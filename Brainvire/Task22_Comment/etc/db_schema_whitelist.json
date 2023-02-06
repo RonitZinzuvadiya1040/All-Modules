@@ -1,0 +1,17 @@
+{
+    "quote_address": {
+        "column": {
+            "comment": true
+        }
+    },
+    "sales_order_address": {
+        "column": {
+            "comment": true
+        }
+    },
+    "sales_order_grid": {
+        "column": {
+            "comment": true
+        }
+    }
+}
