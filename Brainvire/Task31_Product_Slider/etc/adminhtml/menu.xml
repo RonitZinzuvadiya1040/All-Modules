@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Brainvire_Task31_Product_Slider::productslider" title="Product Sliders" module="Brainvire_Task31_Product_Slider" sortOrder="100" resource="Brainvire_Task31_Product_Slider::productslider" parent="Magento_Backend::content"/>
+        <add id="Brainvire_Task31_Product_Slider::slider" title="Manage Sliders" module="Brainvire_Task31_Product_Slider" sortOrder="20" parent="Brainvire_Task31_Product_Slider::productslider" action="mpproductslider/slider/index" resource="Brainvire_Task31_Product_Slider::slider"/>
+        <add id="Brainvire_Task31_Product_Slider::configuration" title="Configuration" module="Brainvire_Task31_Product_Slider" sortOrder="30" parent="Brainvire_Task31_Product_Slider::productslider" action="adminhtml/system_config/edit/section/productslider" resource="Brainvire_Task31_Product_Slider::slider"/>
+    </menu>
+</config>
