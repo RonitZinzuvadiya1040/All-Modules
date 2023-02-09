@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Brainvire\Task1\Api\FaqRepositoryInterface" type="Brainvire\Task1\Model\FaqRepository"/>
+    <preference for="Brainvire\Task1\Api\Data\FaqInterface" type="Brainvire\Task1\Model\Index"/>
+    <preference for="Brainvire\Task1\Api\Data\IndexSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <virtualType name="Brainvire\Task1\Model\ResourceModel\Index\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">brainvire_task1_index</argument>
+            <argument name="resourceModel" xsi:type="string">Brainvire\Task1\Model\ResourceModel\Index\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="brainvire_Task1_index_listing_data_source" xsi:type="string">Brainvire\Task1\Model\ResourceModel\Index\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Brainvire\Task1\Ui\Component\MassAction\Status\Options">
+    <arguments>
+        <argument name="data" xsi:type="array">
+            <item name="urlPath" xsi:type="string">task1/index/masschangestatus</item>
+            <item name="paramName" xsi:type="string">status</item>
+            <item name="confirm" xsi:type="array">
+                <item name="title" xsi:type="string" translatable="true">Change Status</item>
+                <item name="message" xsi:type="string" translatable="true">Are you sure to change?</item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+</config>
