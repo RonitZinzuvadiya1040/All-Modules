@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="brainvire_task1_product" resource="default" engine="innodb" comment="Report Table">
+        
+        <column xsi:type="int" name="reportid" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        
+        <column xsi:type="varchar" name="category_name" nullable="false"  comment="Category Name"/>
+        
+        <column xsi:type="varchar" name="subtotal" nullable="false" comment="Sub Total"/>
+        
+        <column xsi:type="varchar" name="total" nullable="false" comment="Total"/>
+        
+        <column xsi:type="varchar" name="invoiced" nullable="false" length="255" comment="Invoiced"/>
+        
+        <column xsi:type="varchar" name="refunded" nullable="false" length="255" comment="Refunded"/>
+        
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="reportid"/>
+        </constraint>
+
+    </table>
+</schema>
