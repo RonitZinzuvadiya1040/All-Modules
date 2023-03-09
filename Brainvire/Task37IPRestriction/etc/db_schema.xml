@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+   <table name="custom_restricted_customer_ipaddress" resource="default" engine="innodb" comment="Custom Table For Restricted ip address">
+      <column xsi:type="smallint" name="restrict_id" padding="7" unsigned="false" nullable="false" identity="true" comment="Primary ID" />
+      <column xsi:type="varchar" name="restricted_address" nullable="false" length="255" comment="Restricted Address" />
+      <constraint xsi:type="primary" referenceId="PRIMARY">
+        <column name="restrict_id" />
+      </constraint>
+   </table>
+</schema>

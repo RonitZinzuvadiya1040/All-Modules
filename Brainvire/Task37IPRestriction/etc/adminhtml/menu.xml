@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+   <menu>
+        <add id="Brainvire_Task37IPRestriction::restricted_customer_login" title="Restricted Login" module="Brainvire_Task37IPRestriction" sortOrder="150" parent="Magento_Customer::customer" resource="Brainvire_Task37IPRestriction::menu"/>
+        
+        <add id="Brainvire_Task37IPRestriction::restricted_customer_login_menu" title="Customer" module="Brainvire_Task37IPRestriction" sortOrder="10" action="restricted_customer/index/index" resource="Brainvire_Task37IPRestriction::option" parent="Brainvire_Task37IPRestriction::restricted_customer_login" />
+   </menu>
+</config>
