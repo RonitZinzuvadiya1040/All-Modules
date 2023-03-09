@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Brainvire\Task42StaticBlockInCustomLayout\Block\Lorem" name="my_lorem_block1" template="Brainvire_Task42StaticBlockInCustomLayout::lorem.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Brainvire\Task42StaticBlockInCustomLayout\Block\Lorem2" name="my_lorem_block2" template="Brainvire_Task42StaticBlockInCustomLayout::lorem.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceContainer name="sidebar.additional">   
+            <block class="Brainvire\Task42StaticBlockInCustomLayout\Block\Lorem3" name="my_lorem_block3" template="Brainvire_Task42StaticBlockInCustomLayout::lorem.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
