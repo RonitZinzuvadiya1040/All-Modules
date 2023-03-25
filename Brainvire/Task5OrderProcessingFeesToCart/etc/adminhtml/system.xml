@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Processingfee" translate="label" sortOrder="50">
+            <label>Processing Fee</label>
+        </tab>
+        <section id="percentage" translate="label" sortOrder="49" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Processing Fee Charge</label>
+            <tab>Processingfee</tab>
+            <resource>Brainvire_Task5OrderProcessingFeesToCart::percentage</resource>
+            <group id="general" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Processing Fee Charge</label>
+                
+                <field id="display_text" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enter Percentage</label>
+                    <comment>This Percentage will display on the frontend.</comment>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
