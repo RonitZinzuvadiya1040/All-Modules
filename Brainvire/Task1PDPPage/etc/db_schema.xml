@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="quote" resource="default" engine="innodb">
+        <column xsi:type="varchar" name="engraving" nullable="false" comment="Engraving"/>
+        <column xsi:type="varchar" name="size" nullable="false" comment="Size"/>
+    </table>
+    <table name="quote_address" resource="default" engine="innodb">
+        <column xsi:type="varchar" name="engraving" nullable="false" comment="Engraving"/>
+        <column xsi:type="varchar" name="size" nullable="false" comment="Size"/>
+    </table>
+</schema>

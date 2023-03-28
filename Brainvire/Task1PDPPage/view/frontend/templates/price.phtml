@@ -1,0 +1,24 @@
+<?php
+$helper = $this->helper('Brainvire\Task1PDPPage\Helper\Data');
+$price = $helper->getpricedata();
+$handlingtype = $helper->getpricetype();
+?>
+
+<div class="pdp">
+	<div class="engraving" style="width:60%; padding-bottom:5px" >
+		<label><b>Engraving</b></label>
+		<input type="text" name="engraving" id="engraving">
+	</div>
+	<div class="size" style="width:60%">
+		<label><b>Size</b></label>
+		<input type="text" name="size" id="size">
+	</div>
+</div>
+<p>Note: On adding engraving you will be charged addition <?php echo $price?> <?php echo $handlingtype?></p>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Brainvire_Task1PDPPage/js/product": {}
+        }
+    }
+</script>

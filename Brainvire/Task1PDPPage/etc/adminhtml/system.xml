@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="price" translate="label" sortOrder="10">
+            <label>Price PDP</label>
+        </tab>
+        <section id="price_sec" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Price section</label>
+            <tab>price</tab>
+            <resource>Brainvire_Task1PDPPage::price</resource>
+            <group id="price_group" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Price Section Configuration</label>
+                <field id="price_field" type="text" sortOrder="10" showInDefault="1" >
+                    <label>Price</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="handling_type" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Calculate Handling Fee</label>
+                    <source_model>Brainvire\Task1PDPPage\Model\Price</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
